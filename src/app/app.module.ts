@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.component';
 
 // Components
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 
 // Services
 import { CustomHttpInterceptor } from './utils/interceptor/custom-http.interceptor';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,11 @@ import { CustomHttpInterceptor } from './utils/interceptor/custom-http.intercept
     ContentComponent, FooterComponent, LandingComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, MatDialogModule
+    BrowserModule, BrowserAnimationsModule, MatDialogModule,
+    AppRoutingModule, HttpClientModule
   ],
   providers: [
+    AuthService,
     { provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
