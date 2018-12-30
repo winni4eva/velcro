@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -13,7 +15,7 @@ import { FooterComponent } from './footer/footer.component';
     ContentComponent, FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, BrowserAnimationsModule, MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
