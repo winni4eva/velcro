@@ -8,11 +8,15 @@ import { AppRoutingModule } from './app-routing.component';
 
 // Components
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { SideMenuComponent } from './side-menu/side-menu.component';
-import { ContentComponent } from './content/content.component';
+import { NavBarComponent } from './dashboard/nav-bar/nav-bar.component';
+import { SideMenuComponent } from './dashboard/side-menu/side-menu.component';
+import { ContentComponent } from './dashboard/content/content.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingComponent } from './landing/landing.component';
-import { FooterComponent } from './footer/footer.component';
+import { LandingContentComponent } from './landing/landing-content/landing-content.component';
+import { LandingNavBarComponent } from './landing/landing-nav-bar/landing-nav-bar.component';
+import { FooterComponent } from './dashboard/footer/footer.component';
+import { LandingFooterComponent } from './landing/landing-footer/landing-footer.component';
 
 // Services
 import { CustomHttpInterceptor } from './utils/interceptor/custom-http.interceptor';
@@ -21,7 +25,9 @@ import { AuthService } from './auth/auth.service';
 @NgModule({
   declarations: [
     AppComponent, NavBarComponent, SideMenuComponent,
-    ContentComponent, FooterComponent, LandingComponent
+    ContentComponent, FooterComponent, LandingComponent,
+    LandingFooterComponent, LandingContentComponent, LandingNavBarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, MatDialogModule,
@@ -33,4 +39,5 @@ import { AuthService } from './auth/auth.service';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
